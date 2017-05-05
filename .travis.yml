@@ -3,9 +3,13 @@ services:
   - docker
 language: python
 python:
+  - "3.4"
   - "3.5"
+  - "3.6"
 env:
+  - DJANGO=1.9 DB=postgres
   - DJANGO=1.10 DB=postgres
+  - DJANGO=1.11 DB=postgres
 before_install:
   - curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
@@ -16,3 +20,9 @@ before_script:
 script:
   - docker-compose -f dev.yml build
   - docker-compose -f dev.yml run django pytest 
+notifications:
+  email:
+    recipients:
+      - adilson.torres@outlook.com
+    on_sucess: never
+    on_failure: never
