@@ -17,7 +17,7 @@ before_script:
 script:
   - docker-compose -f dev.yml build
   - docker-compose -f dev.yml run django coverage run manage.py test 
-after_sucess:
+after_success:
   - coverage report
   - coverage combine --append
   - coverage report
