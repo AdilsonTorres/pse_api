@@ -18,7 +18,7 @@ script:
   - docker-compose -f dev.yml build
   - docker-compose -f dev.yml run django coverage run manage.py test 
 after_sucess:
-  - coveralls
+  - docker-compose -f dev.yml run django coveralls
 notifications:
   email:
     recipients:
