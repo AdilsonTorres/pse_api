@@ -75,5 +75,3 @@ pse_api/media/
 staticfiles/
 
 .cache/
-
-.coveralls.yml
