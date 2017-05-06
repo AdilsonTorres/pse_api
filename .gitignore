@@ -76,3 +76,4 @@ staticfiles/
 
 .cache/
 
+.coveralls.yml
