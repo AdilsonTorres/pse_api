@@ -7,6 +7,12 @@ Tools for search and show useful info.
      :target: https://github.com/pydanny/cookiecutter-django/
      :alt: Built with Cookiecutter Django
 
+.. image:: https://travis-ci.com/AdilsonTorres/pse_api.svg?token=3KWxqYqyaL1BEqtbtwzA&branch=master
+    :target: https://travis-ci.com/AdilsonTorres/pse_api
+
+.. image:: https://coveralls.io/repos/github/AdilsonTorres/pse_api/badge.svg?branch=master
+    :target: https://coveralls.io/github/AdilsonTorres/pse_api?branch=master
+
 
 Settings
 --------
