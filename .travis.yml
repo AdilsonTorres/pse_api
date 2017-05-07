@@ -11,8 +11,6 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin 
 install: true
-before_script:
-  - pip install -U flake8
 script:
   - docker-compose -f dev.yml build
   - docker-compose -f dev.yml run django coverage run manage.py test 
