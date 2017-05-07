@@ -22,8 +22,8 @@ script:
   - docker cp pseapi_django_1:/app/.coverage .coverage.docker
   - cat .coverage
 after_success:
-  - coverage combine
-  - coveralls
+  - sudo coverage combine
+  - sudo coveralls
 notifications:
   email:
     recipients:
