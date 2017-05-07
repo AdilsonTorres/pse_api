@@ -22,7 +22,7 @@ script:
   - docker cp pseapi_django_1:/app/.coverage .coverage.docker
   - cat .coverage
   - ls -la
-  - chmod 777 .coverage
+  - sudo chmod 777 .coverage
   - ls -la
 after_success:
   - coverage combine
