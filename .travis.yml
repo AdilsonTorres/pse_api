@@ -11,9 +11,9 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin 
 install: 
+  - pip install coverage
   - pip install django_coverage_plugin
   - pip install coveralls
-  - pip install coverage
 script:
   - docker-compose -f dev.yml build
   - docker-compose -f dev.yml up -d
@@ -22,7 +22,7 @@ script:
   - docker cp pseapi_django_1:/app/.coverage .coverage.docker
   - cat .coverage
 after_success:
-  - sudo coverage combine
+  - coverage combine
   - coveralls
 notifications:
   email:
