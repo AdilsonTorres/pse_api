@@ -13,7 +13,7 @@ before_install:
 install: pip install coveralls
 script:
   - docker-compose -f dev.yml build
-  - docker-compose -f dev.yml up
+  - docker-compose -f dev.yml up -d
   - docker-compose -f dev.yml run django coverage run manage.py test 
   - sudo docker cp pseapi_django_1:/app/.coverage .coverage
 after_success:
