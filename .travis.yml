@@ -18,10 +18,10 @@ script:
   - docker-compose -f dev.yml up -d
   - docker-compose -f dev.yml run django coverage run manage.py test 
   - docker exec pseapi_django_1 cat /app/.coverage
-  - sudo docker cp pseapi_django_1:/app/.coverage .coverage.docker
+  - docker cp pseapi_django_1:/app/.coverage .coverage.docker
   - cat .coverage
 after_success:
-  - coverage combine
+  - sudo coverage combine
   - coveralls
 notifications:
   email:
