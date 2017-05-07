@@ -23,6 +23,8 @@ script:
   - cat .coverage
   - ls -la
   - sudo chmod 777 .coverage
+  - 'sudo chown travis: .coverage'
+  - sudo chmod 777 .coverage.docker
   - ls -la
 after_success:
   - coverage combine
