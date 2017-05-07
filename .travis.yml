@@ -10,19 +10,14 @@ before_install:
   - curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin 
-install:
-  - pip install coveralls
+install: true
 before_script:
   - pip install -U flake8
-  - pip install django_coverage_plugin
 script:
   - docker-compose -f dev.yml build
   - docker-compose -f dev.yml run django coverage run manage.py test 
 after_success:
-  - coverage report
-  - coverage combine --append
-  - coverage report
-  - coveralls
+  - docker-compose -f dev.yml run django coveralls
 notifications:
   email:
     recipients:
